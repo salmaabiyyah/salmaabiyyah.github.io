@@ -39,7 +39,7 @@ Adapun manfaat dari penelitian ini antara lain:
 
 1.  Manfaat Teoritis 
 
-Mmanfaat teoritis dari penelitian ini mencakup pemahaman mendalam tentang keterkaitan antara impor beras dari Thailand dan ketahanan pangan Indonesia, membantu pembuat kebijakan, praktisi, dan peneliti untuk mengembangkan strategi yang lebih baik dalam mengelola ketahanan pangan nasional.
+Manfaat teoritis dari penelitian ini mencakup pemahaman mendalam tentang keterkaitan antara impor beras dari Thailand dan ketahanan pangan Indonesia, membantu pembuat kebijakan, praktisi, dan peneliti untuk mengembangkan strategi yang lebih baik dalam mengelola ketahanan pangan nasional.
 
 2.  Manfaat Praktis
 
@@ -110,6 +110,15 @@ plot(dat$x,dat$m,xlab="Impor",ylab="error")
 abline(h=0) #membuat garis horizontal di y=0
 ```
 
+### Metode analisis
+
+Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (X) dengan Jumlah penduduk (S) dan Jumlah Konsumsi Beras (Y). Spesifikasi yang dilakukan adalah:
+
+$$
+X=\beta_0 +\beta_1 X+\beta_2 S+\mu
+$$
+
+Di mana X adalah Impor Beras Thailand, S adalah Jumlah penduduk Indonesia, dan Y adalah Konsumsi Beras.
 
 ## Pembahasan
 
