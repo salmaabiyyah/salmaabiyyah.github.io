@@ -157,8 +157,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Packages yang digunakan sebagai penunjang regresi multivariat dalam penelitian ini antara lain sebagai berikut:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(WDI) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </div>
 </section>
 </section>
@@ -182,9 +181,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <thead>
 <tr class="header">
 <th>TAHUN</th>
-<th>Impor (x)</th>
-<th>Jumlah Penduduk (S)</th>
-<th>KONSUMSI BERAS (Y)</th>
+<th>Impor (Y)</th>
+<th>Jumlah Penduduk (X)</th>
+<th>KONSUMSI BERAS (S)</th>
 </tr>
 </thead>
 <tbody>
@@ -252,14 +251,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </table>
 <p>Penelitian ini menggunakan data sekunder dengan bentuk data time series 2010-2019, data yang dipakai ialah data yang telah diolah dengan sumber Badan Pusat Statistik.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">setwd</span>(<span class="st">"~/k;"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">'BERAS.xlsx'</span>)</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(y<span class="sc">~</span>x<span class="sc">+</span>s, <span class="at">data=</span>dat)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>m<span class="ot">&lt;-</span><span class="fu">resid</span>(reg1)</span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>x,dat<span class="sc">$</span>m,<span class="at">xlab=</span><span class="st">"Impor"</span>,<span class="at">ylab=</span><span class="st">"error"</span>)</span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>) <span class="co">#membuat garis horizontal di y=0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">'BERAS.xlsx'</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(y<span class="sc">~</span>x<span class="sc">+</span>s, <span class="at">data=</span>dat)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>dat<span class="sc">$</span>m<span class="ot">&lt;-</span><span class="fu">resid</span>(reg1)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(dat<span class="sc">$</span>x,dat<span class="sc">$</span>m,<span class="at">xlab=</span><span class="st">"Impor"</span>,<span class="at">ylab=</span><span class="st">"error"</span>)</span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="fu">abline</span>(<span class="at">h=</span><span class="dv">0</span>) <span class="co">#membuat garis horizontal di y=0</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <p><img src="index_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid" width="672"></p>
 </div>
@@ -267,9 +265,9 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="metode-analisis" class="level3" data-number="3.2">
 <h3 data-number="3.2" class="anchored" data-anchor-id="metode-analisis"><span class="header-section-number">3.2</span> Metode analisis</h3>
-<p>Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (X) dengan Jumlah penduduk (S) dan Jumlah Konsumsi Beras (Y). Spesifikasi yang dilakukan adalah:</p>
+<p>Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (Y) dengan Jumlah penduduk (X) dan Jumlah Konsumsi Beras (S). Spesifikasi yang dilakukan adalah:</p>
 <p><span class="math display">\[
-X=\beta_0 +\beta_1 Y+\beta_2 S+\mu
+Y=\beta_0 +\beta_1 X+\beta_2 S+\mu
 \]</span></p>
 <p>Di mana X adalah Impor Beras Thailand, S adalah Jumlah penduduk Indonesia, dan Y adalah Konsumsi Beras.</p>
 </section>
@@ -337,26 +335,26 @@ X=\beta_0 +\beta_1 Y+\beta_2 S+\mu
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(dat)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 6 × 4
-  TAHUN       x     s        y
-  &lt;dbl&gt;   &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;
-1  2010 209128.  242. 33189891
-2  2011 938696.  245. 33673006
-3  2012 315353.  248. 34150917
-4  2013  94634.  252. 34623039
-5  2014 366204.  255. 31268435
-6  2015 126746.  258. 33144541</code></pre>
+  TAHUN     x        s       y
+  &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;   &lt;dbl&gt;
+1  2010  242. 33189891 209128.
+2  2011  245. 33673006 938696.
+3  2012  248. 34150917 315353.
+4  2013  252. 34623039  94634.
+5  2014  255. 31268435 366204.
+6  2015  258. 33144541 126746.</code></pre>
 </div>
 </div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
 <span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>dat<span class="ot">&lt;-</span><span class="fu">read_excel</span>(<span class="st">"BERAS.xlsx"</span>)</span>
 <span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readxl)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(s<span class="sc">+</span>y<span class="sc">~</span>x, <span class="at">data=</span>dat)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>reg1<span class="ot">&lt;-</span><span class="fu">lm</span>(x<span class="sc">+</span>s<span class="sc">~</span>y, <span class="at">data=</span>dat)</span>
 <span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(reg1)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
 Call:
-lm(formula = s + y ~ x, data = dat)
+lm(formula = x + s ~ y, data = dat)
 
 Residuals:
      Min       1Q   Median       3Q      Max 
@@ -365,7 +363,7 @@ Residuals:
 Coefficients:
               Estimate Std. Error t value Pr(&gt;|t|)    
 (Intercept)  3.265e+07  1.338e+06  24.399  8.5e-09 ***
-x           -1.762e+00  2.892e+00  -0.609    0.559    
+y           -1.762e+00  2.892e+00  -0.609    0.559    
 ---
 Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
 
@@ -374,7 +372,7 @@ Multiple R-squared:  0.04437,   Adjusted R-squared:  -0.07508
 F-statistic: 0.3715 on 1 and 8 DF,  p-value: 0.5591</code></pre>
 </div>
 </div>
-<p>Melalui analisis regresi, upaya dilakukan untuk memahami keterkaitan antara impor beras ((X)), jumlah penduduk ((S)), dan konsumsi beras ((Y)). Rentang hasil residuals, dari -4952394 hingga 2672774, mencerminkan variasi yang signifikan dalam kemampuan model untuk memprediksi konsumsi beras. Tingginya kesalahan standar residual (2698000) mengindikasikan tingkat ketidakpastian yang signifikan dalam prediksi model ini. R-squared yang rendah (0.04437) dan Adjusted R-squared yang lebih rendah (-0.07508) menggambarkan bahwa model tidak secara efektif menjelaskan variasi dalam konsumsi beras. F-statistic yang rendah (0.3715) dan p-value yang tinggi (0.5591) menyiratkan bahwa secara keseluruhan, model ini tidak memberikan kontribusi yang signifikan dalam menjelaskan variasi konsumsi beras berdasarkan impor beras dan jumlah penduduk.</p>
+<p>Analisis regresi linear sederhana dilakukan untuk memahami hubungan antara variabel Impor Beras (Y) dengan variabel Jumlah penduduk (X) dan Jumlah Konsumsi Beras (S). Hasil regresi menunjukkan bahwa intercept (nilai saat Y=0) adalah 3.265e+07, yang mewakili perkiraan Jumlah penduduk dan Jumlah Konsumsi Beras ketika Impor Beras (Y) sama dengan nol. Koefisien untuk variabel Impor Beras (Y) adalah -1.762e+00, menunjukkan perubahan yang diharapkan dalam Jumlah penduduk dan Jumlah Konsumsi Beras untuk setiap unit perubahan dalam Impor Beras. Namun, koefisien ini tidak signifikan (p-value: 0.559), menunjukkan bahwa variabel Impor Beras mungkin tidak memberikan kontribusi signifikan terhadap variabilitas dalam Jumlah penduduk dan Jumlah Konsumsi Beras. Selain itu, nilai R-squared yang rendah (0.04437) dan p-value F-statistic yang tinggi (0.5591) menunjukkan bahwa model secara keseluruhan tidak signifikan.</p>
 </section>
 </section>
 <section id="kesimpulan" class="level2" data-number="5">

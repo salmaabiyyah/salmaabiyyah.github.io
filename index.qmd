@@ -60,7 +60,6 @@ Packages yang digunakan sebagai penunjang regresi multivariat dalam penelitian i
 #| echo: true
 library(tidyverse)
 library(readxl)
-library(WDI) 
 ```
 
 ## Studi pustaka
@@ -82,7 +81,7 @@ Sitasinya, impor memainkan peran penting dalam memperluas akses pasar, meningkat
 ### Data
 
 
-| TAHUN | Impor (x)   | Jumlah Penduduk (S) | KONSUMSI BERAS (Y) |
+| TAHUN | Impor (Y)   | Jumlah Penduduk (X) | KONSUMSI BERAS (S) |
 |-------|-------------|---------------------|--------------------|
 | 2010  | 209.127,8   | 241.8               |   33189891         |
 | 2011  | 938.695,7   | 245.1               |   33673006         |
@@ -100,7 +99,6 @@ Sitasinya, impor memainkan peran penting dalam memperluas akses pasar, meningkat
 Penelitian ini menggunakan data sekunder dengan bentuk data time series 2010-2019, data yang dipakai ialah data yang telah diolah dengan sumber Badan Pusat Statistik.
 
 ```{r}
-setwd("~/k;")
 library(readxl)
 dat<-read_excel('BERAS.xlsx')
 library(readxl)
@@ -112,10 +110,10 @@ abline(h=0) #membuat garis horizontal di y=0
 
 ### Metode analisis
 
-Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (X) dengan Jumlah penduduk (S) dan Jumlah Konsumsi Beras (Y). Spesifikasi yang dilakukan adalah:
+Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (Y) dengan Jumlah penduduk (X) dan Jumlah Konsumsi Beras (S). Spesifikasi yang dilakukan adalah:
 
 $$
-X=\beta_0 +\beta_1 Y+\beta_2 S+\mu
+Y=\beta_0 +\beta_1 X+\beta_2 S+\mu
 $$
 
 Di mana X adalah Impor Beras Thailand, S adalah Jumlah penduduk Indonesia, dan Y adalah Konsumsi Beras.
@@ -152,10 +150,10 @@ head(dat)
 library(readxl)
 dat<-read_excel("BERAS.xlsx")
 library(readxl)
-reg1<-lm(s+y~x, data=dat)
+reg1<-lm(x+s~y, data=dat)
 summary(reg1)
 ```
-Melalui analisis regresi, upaya dilakukan untuk memahami keterkaitan antara impor beras (\(X\)), jumlah penduduk (\(S\)), dan konsumsi beras (\(Y\)). Rentang hasil residuals, dari -4952394 hingga 2672774, mencerminkan variasi yang signifikan dalam kemampuan model untuk memprediksi konsumsi beras. Tingginya kesalahan standar residual (2698000) mengindikasikan tingkat ketidakpastian yang signifikan dalam prediksi model ini. R-squared yang rendah (0.04437) dan Adjusted R-squared yang lebih rendah (-0.07508) menggambarkan bahwa model tidak secara efektif menjelaskan variasi dalam konsumsi beras. F-statistic yang rendah (0.3715) dan p-value yang tinggi (0.5591) menyiratkan bahwa secara keseluruhan, model ini tidak memberikan kontribusi yang signifikan dalam menjelaskan variasi konsumsi beras berdasarkan impor beras dan jumlah penduduk.
+Analisis regresi linear sederhana dilakukan untuk memahami hubungan antara variabel Impor Beras (Y) dengan variabel Jumlah penduduk (X) dan Jumlah Konsumsi Beras (S). Hasil regresi menunjukkan bahwa intercept (nilai saat Y=0) adalah 3.265e+07, yang mewakili perkiraan Jumlah penduduk dan Jumlah Konsumsi Beras ketika Impor Beras (Y) sama dengan nol. Koefisien untuk variabel Impor Beras (Y) adalah -1.762e+00, menunjukkan perubahan yang diharapkan dalam Jumlah penduduk dan Jumlah Konsumsi Beras untuk setiap unit perubahan dalam Impor Beras. Namun, koefisien ini tidak signifikan (p-value: 0.559), menunjukkan bahwa variabel Impor Beras mungkin tidak memberikan kontribusi signifikan terhadap variabilitas dalam Jumlah penduduk dan Jumlah Konsumsi Beras. Selain itu, nilai R-squared yang rendah (0.04437) dan p-value F-statistic yang tinggi (0.5591) menunjukkan bahwa model secara keseluruhan tidak signifikan.
 
 ## Kesimpulan
 
