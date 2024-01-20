@@ -26,7 +26,9 @@ Penelitian ini akan fokus pada pengaruh impor beras asal Thailand terhadap ketah
 ### Rumusan masalah
 
 Berdasarkan uraian latar belakang diatas maka yang menjadi masalah pokok pada penelitian ini adalah: 
+
 1. Bagaimana hubungan antara variabel X, variabel Y, dan konsumsi beras dalam periode 2010-2019? 
+
 2. Bagaimana pengaruh impor beras terhadap keseimbangan antara ketersediaan beras, jumlah penduduk, dan tingkat konsumsi dalam upaya mencapai ketahanan pangan di Indonesia?
 
 ### Tujuan dan manfaat penelitian
@@ -36,15 +38,18 @@ Tujuan dari penelitian ini adalah untuk menganalisis pengaruh impor beras asal T
 Adapun manfaat dari penelitian ini antara lain:
 
 1.  Manfaat Teoritis 
-Manfaat teoritis dari penelitian ini mencakup pemahaman mendalam tentang keterkaitan antara impor beras dari Thailand dan ketahanan pangan Indonesia, membantu pembuat kebijakan, praktisi, dan peneliti untuk mengembangkan strategi yang lebih baik dalam mengelola ketahanan pangan nasional.
+
+Mmanfaat teoritis dari penelitian ini mencakup pemahaman mendalam tentang keterkaitan antara impor beras dari Thailand dan ketahanan pangan Indonesia, membantu pembuat kebijakan, praktisi, dan peneliti untuk mengembangkan strategi yang lebih baik dalam mengelola ketahanan pangan nasional.
 
 2.  Manfaat Praktis
 
 A.  Bagi Penulis 
+
 Hasil penelitian ini memberikan manfaat praktis bagi penulis dengan meningkatkan keahlian analisis data menggunakan RStudio dan memperdalam pemahaman tentang impor beras asal Thailand dan ketahanan pangan di Indonesia. Penulis dapat mengaplikasikan keterampilan ini dalam penelitian selanjutanya.
 
 B.  Bagi Instansi 
-Hasil penelitian ini memberikan manfaat praktis bagi instansi terkait, seperti Kementerian Perdagangan atau Lembaga Statistik. Temuan ini dapat menjadi dasar untuk untuk meningkatkan ketahanan pangan Indonesia di tengah dinamika impor beras dari Thailand.
+
+Hasil Penelitian ini memberikan manfaat praktis bagi instansi terkait, seperti Kementerian Perdagangan atau Lembaga Statistik. Temuan ini dapat menjadi dasar untuk untuk meningkatkan ketahanan pangan Indonesia di tengah dinamika impor beras dari Thailand.
 
 ### Package
 
@@ -60,10 +65,14 @@ library(WDI)
 
 ## Studi pustaka
 
-1.  Ketahanan Pangan Ketahanan pangan mencerminkan kemampuan suatu entitas, baik itu negara, wilayah, atau individu, untuk menjamin ketersediaan pangan yang cukup, aman, bergizi, dan terjangkau bagi seluruh populasi sepanjang waktu. Aspek pertama dalam konsep ini adalah ketersediaan pangan, yang berkaitan erat dengan produktivitas sektor pertanian dan kemampuan memenuhi kebutuhan pangan melalui sumber daya alam. Selanjutnya, akses pangan menjadi aspek penting, melibatkan kemampuan individu atau kelompok untuk mendapatkan pangan secara fisik, ekonomis, dan sosial, termasuk distribusi dan stabilitas harga.
+1. Ketahanan Pangan  
+
+Ketahanan Pangan mencerminkan kemampuan suatu entitas, baik itu negara, wilayah, atau individu, untuk menjamin ketersediaan pangan yang cukup, aman, bergizi, dan terjangkau bagi seluruh populasi sepanjang waktu. Aspek pertama dalam konsep ini adalah ketersediaan pangan, yang berkaitan erat dengan produktivitas sektor pertanian dan kemampuan memenuhi kebutuhan pangan melalui sumber daya alam. Selanjutnya, akses pangan menjadi aspek penting, melibatkan kemampuan individu atau kelompok untuk mendapatkan pangan secara fisik, ekonomis, dan sosial, termasuk distribusi dan stabilitas harga.
 Aspek lainnya adalah pemanfaatan pangan, yang menitikberatkan pada nutrisi dan kesehatan masyarakat. Ketahanan pangan juga mencakup stabilitas sistem pangan, di mana keberlanjutan dan kestabilan sistem tetap terjaga dalam menghadapi guncangan eksternal seperti perubahan iklim, bencana alam, atau krisis ekonomi. Kesadaran dan keterlibatan masyarakat menjadi dimensi penting, di mana pemahaman akan pentingnya pola makan sehat, pertanian berkelanjutan, dan kebijakan pangan yang baik dapat memperkuat ketahanan pangan secara menyeluruh. Ketahanan pangan yang baik memiliki dampak positif langsung terhadap kesejahteraan sosial, ekonomi, dan politik, menciptakan landasan yang kuat untuk stabilitas dan keberlanjutan pemenuhan kebutuhan pangan.
 
-2.  Impor Impor adalah kegiatan membeli barang atau jasa dari negara lain untuk digunakan di dalam negeri. Praktik impor merangkum sejumlah proses, termasuk pembelian, pengangkutan, dan pembayaran barang atau jasa dari pemasok asing. Negara-negara melakukan impor untuk mendapatkan barang atau jasa yang tidak dapat diproduksi atau tidak tersedia secara efisien di dalam negeri, atau untuk memenuhi permintaan yang melebihi kapasitas produksi domestik.
+2. Impor  
+
+Impor adalah kegiatan membeli barang atau jasa dari negara lain untuk digunakan di dalam negeri. Praktik impor merangkum sejumlah proses, termasuk pembelian, pengangkutan, dan pembayaran barang atau jasa dari pemasok asing. Negara-negara melakukan impor untuk mendapatkan barang atau jasa yang tidak dapat diproduksi atau tidak tersedia secara efisien di dalam negeri, atau untuk memenuhi permintaan yang melebihi kapasitas produksi domestik.
 Dalam era globalisasi, impor telah menjadi bagian integral dari perekonomian modern. Proses impor melibatkan negosiasi kontrak antara importir dan eksportir, termasuk penetapan harga, persyaratan kualitas, dan metode pembayaran. Setelah itu, barang atau jasa diangkut melalui jalur perdagangan internasional, seperti pelabuhan atau bandara, dan dikenakan bea cukai serta pajak impor.
 
 Sitasinya, impor memainkan peran penting dalam memperluas akses pasar, meningkatkan keragaman produk, dan memfasilitasi pertukaran internasional. Namun, impor juga dapat menciptakan tantangan, seperti defisit perdagangan, ketergantungan eksternal, dan fluktuasi nilai tukar. Oleh karena itu, manajemen impor yang efektif dan kebijakan perdagangan yang bijaksana menjadi krusial untuk menjaga keseimbangan ekonomi suatu negara, mengoptimalkan keuntungan, dan menjaga ketahanan perekonomian nasional.
@@ -106,7 +115,6 @@ abline(h=0) #membuat garis horizontal di y=0
 
 ### Pembahasan masalah
 
-Pada bagian ini dapat ditampilkan data dan visualisasi data yang telah dikumpulkan.
 
 | Variable           | Coefficient | Std.Error | t-value | Pr(>|t|) |
 |--------------------|-------------|-----------|---------|----------|
