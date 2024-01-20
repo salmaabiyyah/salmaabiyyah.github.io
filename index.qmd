@@ -115,7 +115,7 @@ abline(h=0) #membuat garis horizontal di y=0
 Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (X) dengan Jumlah penduduk (S) dan Jumlah Konsumsi Beras (Y). Spesifikasi yang dilakukan adalah:
 
 $$
-X=\beta_0 +\beta_1 X+\beta_2 S+\mu
+X=\beta_0 +\beta_1 Y+\beta_2 S+\mu
 $$
 
 Di mana X adalah Impor Beras Thailand, S adalah Jumlah penduduk Indonesia, dan Y adalah Konsumsi Beras.
