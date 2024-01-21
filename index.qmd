@@ -110,7 +110,7 @@ abline(h=0) #membuat garis horizontal di y=0
 
 ### Metode analisis
 
-Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan 2 variabel independen yaitu ekspor dan impor dan 1 variabel dependen yaitu PDB. Penelitian ini bertujuan untuk mencari hubungan antara Impor Beras (Y) dengan Jumlah penduduk (X) dan Jumlah Konsumsi Beras (S). Spesifikasi yang dilakukan adalah:
+Teknik analisis yang digunakan dalam penelitian ini adalah teknik kuantitatif deskriptif. Metode yang dipilih adalah regresi multivariat dengan tujuan untuk mencari hubungan antara Impor Beras (Y) dengan Jumlah penduduk (X) dan Jumlah Konsumsi Beras (S). Spesifikasi yang dilakukan adalah:
 
 $$
 Y=\beta_0 +\beta_1 X+\beta_2 S+\mu
